@@ -9,7 +9,7 @@ from procs import run
 
 
 def common_test(direnv_project: DirenvProject) -> None:
-    run(["nix-collect-garbage"])
+    #  run(["nix-collect-garbage"])
 
     testenv = str(direnv_project.dir)
 
@@ -24,7 +24,7 @@ def common_test(direnv_project: DirenvProject) -> None:
     assert "renewed cache" in out1.stderr
     assert "Executing shellHook." in out1.stderr
 
-    run(["nix-collect-garbage"])
+    #  run(["nix-collect-garbage"])
 
     out2 = run(
         ["direnv", "exec", testenv, "hello"],
